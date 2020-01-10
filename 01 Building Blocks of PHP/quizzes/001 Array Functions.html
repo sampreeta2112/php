@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>001 Array Functions</title>
+    </head>
+    <body>
+
+        <div style="background-color:#ffffaa" align = "center">
+            <script>
+                var c = '';
+                var opt = '';
+                var n = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+                var quiz = {"count": 2, "next": null, "previous": null, "results": [{"_class": "assessment", "id": 1355850, "assessment_type": "multiple-choice", "created": "2017-06-13T07:16:21Z", "prompt": {"answers": ["<p>The implode() function returns a associative stringÂ from the elements of an array.</p>", "<p>The implode() function returns a string from the elements of an array.</p>\n\n<p><br></p>"], "relatedLectureIds": ["7212886"], "question": "<p>What implode Function does?</p>\n\n<pre class=\"prettyprint linenums\">&lt;?php  \n$Quote=array(\"Never\",\"Give\",\"UP\",\"in\",\"life\");\n?&gt;&lt;br&gt;\n&lt;?php echo implode(\" \",$Quote);?&gt;\n\n// Out Put: Never Give UP in life</pre>", "feedbacks": ["There is no concept of associative string ", "Run the code"]}, "correct_response": ["b"], "updated": "2017-06-13T07:22:56Z", "section": "", "question_plain": "What implode Function does?\n\n&lt;?php  \n$Quote=array(\"Never\",\"Give\",\"UP\",\"in\",\"life\");\n?&gt;&lt;br&gt;\n&lt;?php echo implode(\" \",$Quote);?&gt;\n\n// Out Put: Never Give UP in life", "related_lectures": [{"_class": "lecture", "id": 7212886, "title": "Arrays Functions", "created": "2017-06-04T10:41:16Z", "asset": {"_class": "asset", "id": 8610558, "asset_type": "Video", "title": "Lecture 7 Arrays Functions.mp4", "created": "2017-06-04T10:49:56Z"}, "object_index": 13, "url": "/the-complete-php-mysql-professional-course/learn/v4/t/lecture/7212886"}], "original_assessment_id": 0}, {"_class": "assessment", "id": 1355858, "assessment_type": "multiple-choice", "created": "2017-06-13T07:19:47Z", "prompt": {"answers": ["<pre class=\"prettyprint linenums\">// The explode() function breaks a string into an array</pre>", "<pre class=\"prettyprint linenums\">// The explode() function combine a pieces of string </pre>"], "relatedLectureIds": ["7212886"], "question": "<p>What Explode Function does?</p>\n\n<pre class=\"prettyprint linenums\">Explode:&lt;?php  \n$Quote=\"Never Give UP in life\";\nprint_r (explode(\" \",$Quote));\n?&gt;&lt;br&gt;\n//Out Put :Array ( [0] =&gt; Never [1] =&gt; Give [2] =&gt; UP [3] =&gt; in [4] =&gt; life )</pre>", "feedbacks": ["", ""]}, "correct_response": ["a"], "updated": "2017-06-13T07:23:41Z", "section": "", "question_plain": "What Explode Function does?\n\nExplode:&lt;?php  \n$Quote=\"Never Give UP in life\";\nprint_r (explode(\" \",$Quote));\n?&gt;&lt;br&gt;\n//Out Put :Array ( [0] =&gt; Never [1] =&gt; Give [2] =&gt; UP [3] =&gt; in [4] =&gt; life )", "related_lectures": [{"_class": "lecture", "id": 7212886, "title": "Arrays Functions", "created": "2017-06-04T10:41:16Z", "asset": {"_class": "asset", "id": 8610558, "asset_type": "Video", "title": "Lecture 7 Arrays Functions.mp4", "created": "2017-06-04T10:49:56Z"}, "object_index": 13, "url": "/the-complete-php-mysql-professional-course/learn/v4/t/lecture/7212886"}], "original_assessment_id": 0}]};
+
+                for (var i = 0; i < quiz.results.length; i++) {
+
+                    var question = '<font color="ff0000"><br><h3>Question-' + i + ': </h3> <b>' + quiz.results[i].prompt.question + '</b> <br>';
+
+                    for (var j = 0; j < quiz.results[i].prompt.answers.length; j++) {
+
+                        opt = opt.concat(quiz.results[i].prompt.answers[j] ? '<p style="cursor: pointer" onclick="this.style=\'font-weight: bold; color: #CE534D\'">' + n[j] + ': ' + quiz.results[i].prompt.answers[j].toString().replace(/,/g, '<br>') + '</p>' : '<br>');
+                    }
+                    var ans = quiz.results[i].correct_response ? '<p> <br> <input style="cursor: pointer" type="button" onclick="this.value=\'Answer is: ' + quiz.results[i].correct_response.toString() + '\'" value="Show Answer"></input> </p>' : '<br>';
+                    c = c.concat(question, opt, ans);
+                    opt = ''
+                    }
+                document.write(c);
+            </script>
+        </div>
+    </body>
+    </html>
